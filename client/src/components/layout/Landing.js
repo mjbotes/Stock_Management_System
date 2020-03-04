@@ -10,19 +10,19 @@ const Landing = ({ isAuthenticated }) => {
 
   return (
     <section className='landing'>
-      <div className='dark-overlay'>
-        <div className='landing-inner'>
+      <section className='dark-overlay'>
+        <section className='landing-inner'>
           <h1 className='x-large text-primary'>Stock Management</h1>
           <p className='lead'>
             This is a website for ordering and managing stock! 
           </p>
-          <div className='buttons'>
+          <section className='buttons'>
             <Link to='/login' className='btn btn-primary'>
               Login
             </Link>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
     </section>
   );
 };

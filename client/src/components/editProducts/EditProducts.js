@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import Home from '../home/Home'
 
-const EditCustomers = ({isAuthenticated }) => {
+const EditCustomers = ({isAuthenticated, Admin }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const EditCustomers = ({isAuthenticated }) => {
   //   return <Redirect to='/login' />;
   // }
 
-  // if (!Admin) {
+  // if (Admin != 1) {
   //   return <Redirect to='/notfound' />;
   // }
 

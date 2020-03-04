@@ -31,7 +31,7 @@ const Login = ({ login, isAuthenticated }) => {
         <i className='fas fa-user text-primary' /> Sign Into Your Account
       </p>
       <form className='form' onSubmit={e => onSubmit(e)}>
-        <div className='form-group'>
+        <section className='form-group'>
           <input
             type='email'
             placeholder='Email Address'
@@ -42,8 +42,8 @@ const Login = ({ login, isAuthenticated }) => {
             onChange={e => onChange(e)}
             required
           />
-        </div>
-        <div className='form-group'>
+        </section>
+        <section className='form-group'>
           <input
             type='password'
             placeholder='Password'
@@ -54,7 +54,7 @@ const Login = ({ login, isAuthenticated }) => {
             onChange={e => onChange(e)}
             minLength='6'
           />
-        </div>
+        </section>
         <input type='submit' className='btn btn-primary' value='Login' />
       </form>
     </Fragment>

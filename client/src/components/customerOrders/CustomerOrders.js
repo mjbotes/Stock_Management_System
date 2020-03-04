@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-const CustomerOrders = ({isAuthenticated }) => {
+const CustomerOrders = ({isAuthenticated, Admin }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -12,7 +12,7 @@ const CustomerOrders = ({isAuthenticated }) => {
   //   return <Redirect to='/login' />;
   // }
 
-  // if (Admin) {
+  // if (Admin == 1) {
   //   return <Redirect to='/notfound' />;
   // }
 

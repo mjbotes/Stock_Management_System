@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
-const EditCustomers = ({isAuthenticated }) => {
+const EditCustomers = ({isAuthenticated, Admin }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -12,7 +12,7 @@ const EditCustomers = ({isAuthenticated }) => {
   //   return <Redirect to='/login' />;
   // }
 
-  // if (!Admin) {
+  // if (Admin != 1) {
   //   return <Redirect to='/notfound' />;
   // }
 
@@ -36,7 +36,7 @@ const EditCustomers = ({isAuthenticated }) => {
           <br />
           <div className=""><button className="btn btn-success" type="submit">Add</button></div>
         </form>
-        <br />
+        {/* <br />
         <h1 className='x-large text-primary'>Remove A Customer</h1>
         <p className='lead'>
           <i className='fas fa-user text-primary' /> Enter The Email Address Of The Customer You Want To Remove.
@@ -54,7 +54,7 @@ const EditCustomers = ({isAuthenticated }) => {
           </div>
           <br />
           <div className=""><button className="btn btn-success" type="submit">Remove</button></div>
-        </form>
+        </form> */}
     </Fragment>
   );
 };

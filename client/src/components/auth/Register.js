@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types';
@@ -28,7 +28,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/home' />;
   }
 
   return (
@@ -38,7 +38,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         <i className='fas fa-user text-primary' /> Create Your Account
       </p>
       <form className='form' onSubmit={e => onSubmit(e)}>
-        <div className='form-group'>
+        <secion className='form-group'>
           <input
             type='text'
             placeholder='Name'
@@ -46,8 +46,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             value={name}
             onChange={e => onChange(e)}
           />
-        </div>
-        <div className='form-group'>
+        </secion>
+        <section className='form-group'>
           <input
             type='email'
             placeholder='Email Address'
@@ -57,8 +57,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             title="Please enter a valid email."
             onChange={e => onChange(e)}
           />
-        </div>
-        <div className='form-group'>
+        </section>
+        <section className='form-group'>
           <input
             type='password'
             placeholder='Password'
@@ -68,8 +68,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 		        title="Must contain at least one number,one uppercase, one lowercase letter, one special character and at least 8 or more characters"
             onChange={e => onChange(e)}
           />
-        </div>
-        <div className='form-group'>
+        </section>
+        <section className='form-group'>
           <input
             type='password'
             placeholder='Confirm Password'
@@ -77,7 +77,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             value={password2}
             onChange={e => onChange(e)}
           />
-        </div>
+        </section>
         <input type='submit' className='btn btn-primary' value='Register' />
       </form>
     </Fragment>
