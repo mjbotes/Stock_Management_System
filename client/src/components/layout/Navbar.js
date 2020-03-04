@@ -5,39 +5,36 @@ import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
-  const authLinks = (
+  const admin = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/editcustomers'>Edit Customers</Link>
       </li>
       <li>
-        <Link to='/posts'>Posts</Link>
+        <Link to='/editproducts'>Edit Products</Link>
       </li>
       <li>
-        <Link to='/dashboard'>
-          <i className='fas fa-user' />{' '}
-          <span className='hide-sm'>Dashboard</span>
-        </Link>
+        <Link to='/orders'>Orders</Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
-          <i className='fas fa-sign-out-alt' />{' '}
+          <i className='fas fa-sign-out-alt text-primary' />{' '}
           <span className='hide-sm'>Logout</span>
         </a>
       </li>
     </ul>
   );
 
-  const guestLinks = (
+  const manager = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/customerorders'>My Orders</Link>
       </li>
       <li>
-        <Link to='/register'>Register</Link>
-      </li>
-      <li>
-        <Link to='/login'>Login</Link>
+        <a onClick={logout} href='#!'>
+          <i className='fas fa-sign-out-alt text-primary' />{' '}
+          <span className='hide-sm'>Logout</span>
+        </a>
       </li>
     </ul>
   );
@@ -45,13 +42,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <nav className='navbar bg-dark'>
       <h1>
-        <Link to='/'>
-          <i className='fas fa-code' /> DevConnector
+        <Link to='/home'>
+          <i className='fas fa-code text-primary' /> StockManagement
         </Link>
       </h1>
-      {!loading && (
+      {admin}
+      {/* {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
+      )} */}
     </nav>
   );
 };
