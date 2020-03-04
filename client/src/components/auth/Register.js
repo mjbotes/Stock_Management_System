@@ -35,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     <Fragment>
       <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Create Your Account
+        <i className='fas fa-user text-primary' /> Create Your Account
       </p>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
@@ -53,12 +53,10 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder='Email Address'
             name='email'
             value={email}
+            pattern="[[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Please enter a valid email."
             onChange={e => onChange(e)}
           />
-          <small className='form-text'>
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
-          </small>
         </div>
         <div className='form-group'>
           <input
@@ -66,6 +64,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder='Password'
             name='password'
             value={password}
+            pattern="(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+		        title="Must contain at least one number,one uppercase, one lowercase letter, one special character and at least 8 or more characters"
             onChange={e => onChange(e)}
           />
         </div>
@@ -80,9 +80,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
         </div>
         <input type='submit' className='btn btn-primary' value='Register' />
       </form>
-      <p className='my-1'>
-        Already have an account? <Link to='/login'>Sign In</Link>
-      </p>
     </Fragment>
   );
 };

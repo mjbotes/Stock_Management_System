@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
@@ -21,14 +21,14 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/home'/>;
   }
 
   return (
     <Fragment>
-      <h1 className='large text-primary'>Sign In</h1>
+      <h1 className='x-large text-primary'>Sign In</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Sign Into Your Account
+        <i className='fas fa-user text-primary' /> Sign Into Your Account
       </p>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
@@ -37,6 +37,8 @@ const Login = ({ login, isAuthenticated }) => {
             placeholder='Email Address'
             name='email'
             value={email}
+            pattern="[[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Please enter a valid email."
             onChange={e => onChange(e)}
             required
           />
@@ -47,15 +49,14 @@ const Login = ({ login, isAuthenticated }) => {
             placeholder='Password'
             name='password'
             value={password}
+            pattern="(?=^.{8,}$)((?=.*\d)(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+		        title="Must contain at least one number,one uppercase, one lowercase letter, one special character and at least 8 or more characters"
             onChange={e => onChange(e)}
             minLength='6'
           />
         </div>
         <input type='submit' className='btn btn-primary' value='Login' />
       </form>
-      <p className='my-1'>
-        Don't have an account? <Link to='/register'>Sign Up</Link>
-      </p>
     </Fragment>
   );
 };

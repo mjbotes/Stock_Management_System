@@ -5,19 +5,13 @@ import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
-  const authLinks = (
+  const admin = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/profiles'>Add a Customer</Link>
       </li>
       <li>
-        <Link to='/posts'>Posts</Link>
-      </li>
-      <li>
-        <Link to='/dashboard'>
-          <i className='fas fa-user' />{' '}
-          <span className='hide-sm'>Dashboard</span>
-        </Link>
+        <Link to='/posts'>Add Products</Link>
       </li>
       <li>
         <a onClick={logout} href='#!'>
@@ -28,7 +22,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     </ul>
   );
 
-  const guestLinks = (
+  const manager = (
     <ul>
       <li>
         <Link to='/profiles'>Developers</Link>
@@ -46,12 +40,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code' /> DevConnector
+          <i className='fas fa-code text-primary' /> StockManagement
         </Link>
       </h1>
-      {!loading && (
+      {admin}
+      {/* {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
+      )} */}
     </nav>
   );
 };
