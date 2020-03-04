@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
 const Home = ({isAuthenticated }) => {
 
@@ -31,7 +32,7 @@ const Home = ({isAuthenticated }) => {
               <td>{Products[1][i]}</td>
               <td>R{Products[2][i]}</td>
               <td>{Products[3][i]}</td>
-              <td><input id={i} defaultValue="0"></input></td>
+              <td><input type='text' class='form' id={i} defaultValue="0"></input></td>
           </tr>);
       i++;
   }
@@ -39,6 +40,15 @@ const Home = ({isAuthenticated }) => {
   return (
     <Fragment>
         <h1 className='x-large text-primary'>Products</h1>
+        <br />
+        <form className='form' onSubmit={e => onSubmit(e)}>
+          <input type='text'></input>
+          <br />
+          <div className=""><button className="btn btn-success" type="submit">Search</button></div>
+        </form>
+        <br />
+        <br />
+        <br />
         <form className='form' onSubmit={e => onSubmit(e)}>
           <table> 
             {table}

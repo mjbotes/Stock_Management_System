@@ -5,6 +5,10 @@ import Login from '../auth/Login';
 import Home from '../home/Home';
 import Alert from '../layout/Alert';
 import NotFound from '../layout/NotFound';
+import EditProducts from '../editProducts/EditProducts';
+import Orders from '../orders/Orders';
+import CustomerOrders from '../customerOrders/CustomerOrders';
+import EditCustomers from '../editCustomers/EditCustomers';
 
 const Routes = () => {
   return (
@@ -14,6 +18,10 @@ const Routes = () => {
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/home' component={Home} />
+        <Route exact path='/editcustomers' component={EditCustomers} />
+        <Route exact path='/editproducts' component={EditProducts} />
+        <Route exact path='/orders' component={Orders} />
+        <Route exact path='/customerorders' component={CustomerOrders} />
         <Route component={NotFound} />
       </Switch>
     </section>
