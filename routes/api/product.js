@@ -5,9 +5,15 @@ const { check, validationResult } = require('express-validator');
 const db_conn = require('../../database');
 
 //@route    GET api/products/
+<<<<<<< Updated upstream
 //@desc     Get all the products and stock in Warehouse
 //@acess    Private
 router.get('/', (req, res) => {
+=======
+//@desc     Get current users profile
+//@acess    Private
+router.get('/', async (req, res) => {
+>>>>>>> Stashed changes
   try {
     db_conn.executeQuery(res, 'getAllProducts()').toArray();
     console.log(res);
@@ -16,6 +22,7 @@ router.get('/', (req, res) => {
   }
 });
 
+<<<<<<< Updated upstream
 //@route    GET api/products/catergory/:catergoryName
 //@desc     Get all the products and stock in Warehouse in that catergory
 //@acess    Private
@@ -39,4 +46,6 @@ router.post('/insert/', (req, res) => {
     db_conn.executeQuery(res, `insertProduct(${})`)
 })
 
+=======
+>>>>>>> Stashed changes
 module.exports = router;
