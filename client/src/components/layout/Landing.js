@@ -3,18 +3,11 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-<<<<<<< HEAD
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) 
   {
     return <Redirect to='/dashboard' />;
   }
-=======
-const Landing = ({}) => {
-	// if (isAuthenticated) {
-	// 	return <Redirect to="/dashboard" />;
-	// }
->>>>>>> ef90b2222b2677ad2aa263711a910a239e841933
 
 	return (
 		<section className="landing">
