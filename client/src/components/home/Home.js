@@ -36,6 +36,8 @@ const Home = ({ getProducts, Products, state }) => {
 		table.push(
 			<tr>
 				<td>{product.ProductName}</td>
+        <td>{product.CategoryName}</td>
+        <td>{product.Manufacture}</td>
 				<td>R{product.Price}</td>
 				<td>{product.WarehouseStockQuantity}</td>
 				<td>
