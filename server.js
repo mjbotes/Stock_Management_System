@@ -1,10 +1,12 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+
 const app = express();
 
+// Init Middleware
 app.use(express.json({ extended: false }));
 
-app.use('/api/product', require('./routes/api/product'));
+// Define Routes
+app.use("/api/product", require("./routes/api/product"));
 
 const PORT = process.env.PORT || 5000;
 
