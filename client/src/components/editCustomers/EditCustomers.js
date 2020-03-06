@@ -8,11 +8,13 @@ const EditCustomers = ({isAuthenticated, Admin }) => {
     e.preventDefault();
   };
 
-  // if (!isAuthenticated) {
+  // if (!isAuthenticated)
+  // {
   //   return <Redirect to='/login' />;
   // }
 
-  // if (Admin != 1) {
+  // if (Admin != 1) 
+  // {
   //   return <Redirect to='/notfound' />;
   // }
 

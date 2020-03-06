@@ -5,7 +5,7 @@ import { setAlert } from '../../actions/alert';
 import { register } from '../../actions/auth';
 import PropTypes from 'prop-types';
 
-const Register = ({ setAlert, register, isAuthenticated }) => {
+const Register = ({ Email }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,16 +20,19 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    if (password !== password2) {
-      setAlert('Passwords do not match', 'danger');
-    } else {
+    if (password !== password2)
+    {
+      setAlert('Passwords do not match', 'primary');
+    }
+    else if (email !== Email)
+    {
+      setAlert('Invalid Email', 'primary');
+    }
+    else
+    {
       register({ name, email, password });
     }
   };
-
-  if (isAuthenticated) {
-    return <Redirect to='/home' />;
-  }
 
   return (
     <Fragment>
@@ -45,6 +48,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             name='name'
             value={name}
             onChange={e => onChange(e)}
+            required
           />
         </secion>
         <section className='form-group'>

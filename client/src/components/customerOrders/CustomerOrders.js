@@ -8,13 +8,15 @@ const CustomerOrders = ({isAuthenticated, Admin }) => {
     e.preventDefault();
   };
 
-  // if (!isAuthenticated) {
-  //   return <Redirect to='/login' />;
-  // }
+//   if (!isAuthenticated) 
+//   {
+//     return <Redirect to='/login' />;
+//   }
 
-  // if (Admin == 1) {
-  //   return <Redirect to='/notfound' />;
-  // }
+//   if (Admin == 1) 
+//   {
+//     return <Redirect to='/notfound' />;
+//   }
 
   return (
     <Fragment>

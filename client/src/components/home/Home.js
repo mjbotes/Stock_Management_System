@@ -6,9 +6,11 @@ const Home = ({isAuthenticated }) => {
 
   const onSubmit = async e => {
     e.preventDefault();
+    // order(OrderProducts);
   };
 
-  // if (!isAuthenticated) {
+  // if (!isAuthenticated) 
+  // {
   //   return <Redirect to='/login' />;
   // }
 
