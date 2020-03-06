@@ -26,6 +26,8 @@ const Home = ({ getProducts, Products, state }) => {
 	table.push(
 		<tr class="lead text-primary">
 			<th>Name</th>
+      <th>Category</th>
+      <th>Manufacturer</th>
 			<th>Price</th>
 			<th>Stock</th>
 			<th>Add To Cart</th>
