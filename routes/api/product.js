@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
 			res,
 			"SELECT * FROM [StockTracker].[dbo].[AllProductsView]"
 		);
-		console.log(res.data);
 	} catch (err) {
 		console.log(err);
 	}

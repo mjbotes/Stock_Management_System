@@ -6,7 +6,8 @@ import {
 	GET_PRODUCTS,
 	PRODUCT_ERROR,
 	UPDATE_PRODUCT,
-	CLEAR_PRODUCT
+	CLEAR_PRODUCT,
+	CLEAR_PRODUCTS
 } from "./types";
 
 // Get current users profile
@@ -35,10 +36,9 @@ export const getProducts = () => async dispatch => {
 
 	try {
 		const res = await axios.get("/api/product/");
-
 		dispatch({
 			type: GET_PRODUCTS,
-			payload: res.data
+			payload: res.data.recordset
 		});
 	} catch (err) {
 		dispatch({
